@@ -1,0 +1,63 @@
+{
+  "name": "@conbee/api-gateway",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main",
+    "dev": "better-npm-run dev"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "nodemon",
+      "env": {
+        "HOST": "http://localhost:3030",
+        "PORT": 3030
+      }
+    }
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "ts-node src/main",
+    "ext": "ts"
+  },
+  "dependencies": {
+    "better-npm-run": "^0.1.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.13",
+    "lodash": "^4.17.15",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.18.2"
+  },
+  "peerDependencies": {
+    "inferno": "5"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.3",
+    "@types/jsonwebtoken": "^8.3.8",
+    "@types/knex": "^0.16.1",
+    "@types/lodash": "^4.14.149",
+    "@types/multer": "^1.4.2",
+    "@types/passport": "^1.0.3",
+    "@types/passport-jwt": "^3.0.3",
+    "@types/passport-local": "^1.0.33",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
+}
